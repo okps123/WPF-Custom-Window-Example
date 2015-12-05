@@ -11,16 +11,16 @@ namespace RayeUI.Control
     public class RayeWindow : Window
     {
         
-        public static readonly new DependencyProperty IconProperty = DependencyProperty.Register("Icon", typeof(object), typeof(RayeWindow));
-        public new object Icon
+        public static readonly DependencyProperty WindowIconProperty = DependencyProperty.Register("WindowIcon", typeof(UIElement), typeof(RayeWindow));
+        public UIElement WindowIcon
         {
             get
             {
-                return GetValue(IconProperty);
+                return (UIElement)GetValue(IconProperty);
             }
             set
             {
-                SetValue(IconProperty, value);
+                SetValue(WindowIconProperty, value);
             }
         }
 

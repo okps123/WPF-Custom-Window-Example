@@ -4,7 +4,10 @@
         xmlns:local="clr-namespace:RayeUI"
         xmlns:control="clr-namespace:RayeUI.Control"
         Title="" Width="800" Height="500" WindowStartupLocation="CenterScreen">
+    <control:RayeWindow.WindowIcon>
+        <Path Width="20" Height="20" Stretch="Fill" Fill="#FF000000" Data="F1 M 27.9586,38.6386L 24,34.8214L 24,42.3333L 27.9586,38.6386 Z M 19,30L 25,28L 32.7021,34.2114L 49,19L 56,24L 56,53L 47,57L 32.5427,43.0591L 24,50L 19,47L 19,30 Z M 38.0872,38.5542L 47,45.742L 47,31.3125L 38.0872,38.5542 Z "/>
+    </control:RayeWindow.WindowIcon>
     <Grid>
-        <TextBox>기본 프로젝트</TextBox>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25pt">Hello, World</TextBlock>
     </Grid>
 </control:RayeWindow>
