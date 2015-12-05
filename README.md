@@ -6,7 +6,7 @@ RayeUI는 WPF UI Framework입니다.
 
 ##사용법
 ###RayeWindow
-![S](http://i.imgur.com/9PntuNz.png)
+![RayeWindow](http://i.imgur.com/9PntuNz.png)
 
 ####기본 설정
 1. Theme폴더와 Control폴더를 자신의 프로젝트에 복사합니다.
@@ -22,5 +22,7 @@ WindowIcon에는 아래와같이 UIElement를 설정해 줄 수 있습니다.
 </control:RayeWindow.WindowIcon>
 ```
 ###RayeButton
+![RayeButton](http://i.imgur.com/CPYh1zU.gif)
+
 1. Button에서 스타일을 RayeButton으로 지정합니다.
 2. Background를 설정하여 버튼의 색을 변경 할 수 있습니다.
