@@ -1,6 +1,4 @@
 # RayeUI
-
-##설명
 RayeUI는 WPF UI Framework입니다.
 **깔끔한 디자인**이 특징으로 아무나 사용하실 수 있습니다.
 
@@ -49,9 +47,9 @@ BorderlessWindow는 사용자가 직접 꾸밀수있도록 여러 **설정**을 
 2. ResizeBorderThickness를 설정해 윈도우 주변에 리사이즈 할 수 있는 드래그 영역을 설정할 수 있습니다.
 3. GlassFrameThickness를 설정해서 표준 윈도우를 보여줄 수 있습니다. [(참고)](https://msdn.microsoft.com/ko-kr/library/system.windows.shell.windowchrome.glassframethickness(v=vs.110).aspx)
 
-###RayeButton
+###WindowButton
 ![RayeButton1](http://i.imgur.com/CPYh1zU.gif)
 ![RayeButton2](http://i.imgur.com/AdPoeiI.png)
 
-1. Button에서 스타일을 RayeButton으로 지정합니다.
+1. Button에서 스타일을 WindowButtonStyle으로 지정합니다.
 2. Background를 설정하여 버튼의 색을 변경 할 수 있습니다.
