@@ -37,11 +37,24 @@ namespace RayeUI.Theme.Window
             }
         }
 
+        public static readonly DependencyProperty IsTitleVisibleProperty = DependencyProperty.Register("IsTitleVisible", typeof(bool), typeof(RayeWindow), new PropertyMetadata(true));
+        public bool IsTitleVisible
+        {
+            get
+            {
+                return (bool)GetValue(IsTitleVisibleProperty);
+            }
+            set
+            {
+                SetValue(IsTitleVisibleProperty, value);
+            }
+        }
+
         public RayeWindow() : base()
         {
             base.Style = (Style)FindResource("RayeWindowStyle");
         }
-        
+
         public override void OnApplyTemplate()
         {
             var minimizeButton = GetTemplateChild("MinimizeButton") as Button;

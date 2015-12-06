@@ -3,6 +3,7 @@
                     xmlns:local="clr-namespace:RayeUI"
                     xmlns:window="clr-namespace:RayeUI.Theme.Window"
                     xmlns:shell="clr-namespace:Microsoft.Windows.Shell;assembly=Microsoft.Windows.Shell">
+    
     <Style x:Key="BorderlessWindowStyle" TargetType="{x:Type window:BorderlessWindow}">
         <Setter Property="shell:WindowChrome.WindowChrome">
             <Setter.Value>
@@ -37,6 +38,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type window:RayeWindow}">
+                    <ControlTemplate.Resources>
+                        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+                    </ControlTemplate.Resources>
                     <Grid x:Name="Grid" Margin="0" Background="White">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="30px" />
@@ -51,14 +55,19 @@
                             </Grid.ColumnDefinitions>
                             <Grid Grid.Column="0">
                                 <Grid Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center">
-                                    <ContentPresenter x:Name="WindowIcon" Content="{Binding WindowIcon, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type window:RayeWindow}}}" shell:WindowChrome.IsHitTestVisibleInChrome="True" />
+                                    <ContentPresenter x:Name="WindowIcon"
+                                                      Content="{Binding WindowIcon, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type window:RayeWindow}}}"
+                                                      shell:WindowChrome.IsHitTestVisibleInChrome="True" />
                                 </Grid>
                             </Grid>
                             <Grid Grid.Column="1">
-                                <Label Content="{TemplateBinding Title}" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                                <Label Content="{TemplateBinding Title}" HorizontalAlignment="Left" VerticalAlignment="Center"
+                                       Visibility="{Binding IsTitleVisible, Converter={StaticResource BooleanToVisibilityConverter}, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type window:RayeWindow}}}"/>
                             </Grid>
                             <Grid Grid.Column="2">
-                                <ContentPresenter x:Name="WindowContent" Content="{Binding WindowContent, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type window:RayeWindow}}}" shell:WindowChrome.IsHitTestVisibleInChrome="True" />
+                                <ContentPresenter x:Name="WindowContent" 
+                                                  Content="{Binding WindowContent, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type window:RayeWindow}}}" 
+                                                  shell:WindowChrome.IsHitTestVisibleInChrome="True" />
                             </Grid>
                             <Grid Grid.Column="3">
                                 <StackPanel Orientation="Horizontal" shell:WindowChrome.IsHitTestVisibleInChrome="True">
