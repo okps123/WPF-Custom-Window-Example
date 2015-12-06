@@ -26,11 +26,11 @@ WindowIcon에는 아래와같이 UIElement를 설정해 줄 수 있습니다.
 ![WindowContent](http://i.imgur.com/MuBmdb3.png)
 
 ```xaml
-    <window:RayeWindow.WindowContent>
+<window:RayeWindow.WindowContent>
         <Grid HorizontalAlignment="Right">
-            <Button Content="설정" Style="{StaticResource WindowButtonStyle}" Width="100" Background="White" />
+                <Button Content="설정" Style="{StaticResource WindowButtonStyle}" Width="100" Background="White" />
         </Grid>
-    </window:RayeWindow.WindowContent>
+</window:RayeWindow.WindowContent>
 ```
 
 
