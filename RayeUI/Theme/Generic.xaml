@@ -1,20 +1,20 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:RayeUI"
-                    xmlns:control="clr-namespace:RayeUI.Control"
+                    xmlns:window="clr-namespace:RayeUI.Theme.Window"
                     xmlns:shell="clr-namespace:Microsoft.Windows.Shell;assembly=Microsoft.Windows.Shell">
-    <Style x:Key="BorderlessWindowStyle" TargetType="{x:Type control:BorderlessWindow}">
+    <Style x:Key="BorderlessWindowStyle" TargetType="{x:Type window:BorderlessWindow}">
         <Setter Property="shell:WindowChrome.WindowChrome">
             <Setter.Value>
-                <shell:WindowChrome CaptionHeight="{Binding CaptionHeight, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type control:BorderlessWindow}}}"
-                                    CornerRadius="{Binding CornerRadius, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type control:BorderlessWindow}}}"
-                                    GlassFrameThickness="{Binding GlassFrameThickness, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type control:BorderlessWindow}}}"
-                                    ResizeBorderThickness="{Binding ResizeBorderThickness, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type control:BorderlessWindow}}}" />
+                <shell:WindowChrome CaptionHeight="{Binding CaptionHeight, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type window:BorderlessWindow}}}"
+                                    CornerRadius="{Binding CornerRadius, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type window:BorderlessWindow}}}"
+                                    GlassFrameThickness="{Binding GlassFrameThickness, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type window:BorderlessWindow}}}"
+                                    ResizeBorderThickness="{Binding ResizeBorderThickness, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type window:BorderlessWindow}}}" />
             </Setter.Value>
         </Setter>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type control:BorderlessWindow}">
+                <ControlTemplate TargetType="{x:Type window:BorderlessWindow}">
                     <Grid x:Name="Grid" Background="White">
                         <ContentPresenter Content="{TemplateBinding Content}" />
                     </Grid>
@@ -27,7 +27,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style x:Key="RayeWindowStyle" TargetType="{x:Type control:RayeWindow}">
+    <Style x:Key="RayeWindowStyle" TargetType="{x:Type window:RayeWindow}">
         <Setter Property="MinWidth" Value="300" />
         <Setter Property="shell:WindowChrome.WindowChrome">
             <Setter.Value>
@@ -36,7 +36,7 @@
         </Setter>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type control:RayeWindow}">
+                <ControlTemplate TargetType="{x:Type window:RayeWindow}">
                     <Grid x:Name="Grid" Margin="0" Background="White">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="30px" />
@@ -51,14 +51,14 @@
                             </Grid.ColumnDefinitions>
                             <Grid Grid.Column="0">
                                 <Grid Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center">
-                                    <ContentPresenter x:Name="WindowIcon" Content="{Binding WindowIcon, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type control:RayeWindow}}}" shell:WindowChrome.IsHitTestVisibleInChrome="True" />
+                                    <ContentPresenter x:Name="WindowIcon" Content="{Binding WindowIcon, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type window:RayeWindow}}}" shell:WindowChrome.IsHitTestVisibleInChrome="True" />
                                 </Grid>
                             </Grid>
                             <Grid Grid.Column="1">
                                 <Label Content="{TemplateBinding Title}" HorizontalAlignment="Left" VerticalAlignment="Center" />
                             </Grid>
                             <Grid Grid.Column="2">
-                                <ContentPresenter x:Name="WindowContent" Content="{Binding WindowContent, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type control:RayeWindow}}}" shell:WindowChrome.IsHitTestVisibleInChrome="True" />
+                                <ContentPresenter x:Name="WindowContent" Content="{Binding WindowContent, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type window:RayeWindow}}}" shell:WindowChrome.IsHitTestVisibleInChrome="True" />
                             </Grid>
                             <Grid Grid.Column="3">
                                 <StackPanel Orientation="Horizontal" shell:WindowChrome.IsHitTestVisibleInChrome="True">

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Windows;
 
-namespace RayeUI.Control
+namespace RayeUI.Theme.Window
 {
-    public class BorderlessWindow : Window
+    public class BorderlessWindow : System.Windows.Window
     {
         public readonly static DependencyProperty CaptionHeightProperty = DependencyProperty.Register("CaptionHeight", typeof(int), typeof(BorderlessWindow), new PropertyMetadata(0));
         public int CaptionHeight

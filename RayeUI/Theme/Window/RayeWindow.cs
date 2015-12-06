@@ -6,9 +6,9 @@ using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace RayeUI.Control
+namespace RayeUI.Theme.Window
 {
-    public class RayeWindow : Window
+    public class RayeWindow : System.Windows.Window
     {
         
         public static readonly DependencyProperty WindowIconProperty = DependencyProperty.Register("WindowIcon", typeof(UIElement), typeof(RayeWindow));
