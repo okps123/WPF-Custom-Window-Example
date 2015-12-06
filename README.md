@@ -36,7 +36,8 @@ BorderlessWindow는 사용자가 직접 꾸밀수있도록 여러 **설정**을 
 3. GlassFrameThickness를 설정해서 표준 윈도우를 보여줄 수 있습니다. [(참고)](https://msdn.microsoft.com/ko-kr/library/system.windows.shell.windowchrome.glassframethickness(v=vs.110).aspx)
 
 ###RayeButton
-![RayeButton](http://i.imgur.com/CPYh1zU.gif)
+![RayeButton1](http://i.imgur.com/CPYh1zU.gif)
+![RayeButton2](http://i.imgur.com/AdPoeiI.png)
 
 1. Button에서 스타일을 RayeButton으로 지정합니다.
 2. Background를 설정하여 버튼의 색을 변경 할 수 있습니다.
