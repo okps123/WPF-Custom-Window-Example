@@ -22,6 +22,20 @@ WindowIcon에는 아래와같이 UIElement를 설정해 줄 수 있습니다.
 </control:RayeWindow.WindowIcon>
 ```
 
+####윈도우 콘텐츠 설정
+상단에 남는 자리를 채워줄 수 있습니다.
+
+![WindowContent](http://i.imgur.com/MuBmdb3.png)
+
+```xaml
+    <control:RayeWindow.WindowContent>
+        <Grid HorizontalAlignment="Right">
+            <Button Content="설정" Style="{StaticResource WindowButtonStyle}" Width="100" Background="White" />
+        </Grid>
+    </control:RayeWindow.WindowContent>
+```
+
+
 ###BorderlessWindow
 ![BorderlessWindow](http://i.imgur.com/OHVbSAA.png)
 
