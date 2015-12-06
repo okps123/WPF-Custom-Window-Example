@@ -15,9 +15,9 @@ RayeUI는 WPF UI Framework입니다.
 설정 할 수 있는 아이콘은 윈도우 상단에 나타나는 아이콘(WindowIcon)과 작업 표시줄에 나타나는 아이콘(Icon)으로 구분됩니다.
 WindowIcon에는 아래와같이 UIElement를 설정해 줄 수 있습니다.
 ```xaml
-<control:RayeWindow.WindowIcon>
+<window:RayeWindow.WindowIcon>
         <Path Width="20" Height="20" Stretch="Fill" Fill="#FF000000" Data="F1 M 27.9586,38.6386L 24,34.8214L 24,42.3333L 27.9586,38.6386 Z M 19,30L 25,28L 32.7021,34.2114L 49,19L 56,24L 56,53L 47,57L 32.5427,43.0591L 24,50L 19,47L 19,30 Z M 38.0872,38.5542L 47,45.742L 47,31.3125L 38.0872,38.5542 Z "/>
-</control:RayeWindow.WindowIcon>
+</window:RayeWindow.WindowIcon>
 ```
 
 ####윈도우 콘텐츠 설정
@@ -26,11 +26,11 @@ WindowIcon에는 아래와같이 UIElement를 설정해 줄 수 있습니다.
 ![WindowContent](http://i.imgur.com/MuBmdb3.png)
 
 ```xaml
-    <control:RayeWindow.WindowContent>
+    <window:RayeWindow.WindowContent>
         <Grid HorizontalAlignment="Right">
             <Button Content="설정" Style="{StaticResource WindowButtonStyle}" Width="100" Background="White" />
         </Grid>
-    </control:RayeWindow.WindowContent>
+    </window:RayeWindow.WindowContent>
 ```
 
 
