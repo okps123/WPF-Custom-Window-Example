@@ -3,15 +3,18 @@
                     xmlns:local="clr-namespace:RayeUI"
                     xmlns:control="clr-namespace:RayeUI.Control"
                     xmlns:shell="clr-namespace:Microsoft.Windows.Shell;assembly=Microsoft.Windows.Shell">
-    <Style x:Key="BorderlessWindowStyle" TargetType="{x:Type Window}">
+    <Style x:Key="BorderlessWindowStyle" TargetType="{x:Type control:BorderlessWindow}">
         <Setter Property="shell:WindowChrome.WindowChrome">
             <Setter.Value>
-                <shell:WindowChrome CaptionHeight="25" CornerRadius="0" GlassFrameThickness="1" ResizeBorderThickness="6" />
+                <shell:WindowChrome CaptionHeight="{Binding CaptionHeight, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type control:BorderlessWindow}}}"
+                                    CornerRadius="{Binding CornerRadius, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type control:BorderlessWindow}}}"
+                                    GlassFrameThickness="{Binding GlassFrameThickness, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type control:BorderlessWindow}}}"
+                                    ResizeBorderThickness="{Binding ResizeBorderThickness, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type control:BorderlessWindow}}}" />
             </Setter.Value>
         </Setter>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Window}">
+                <ControlTemplate TargetType="{x:Type control:BorderlessWindow}">
                     <Grid x:Name="Grid" Background="White">
                         <ContentPresenter Content="{TemplateBinding Content}" />
                     </Grid>
