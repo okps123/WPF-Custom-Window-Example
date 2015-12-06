@@ -27,7 +27,6 @@
             </Setter.Value>
         </Setter>
     </Style>
-
     <Style x:Key="RayeWindowStyle" TargetType="{x:Type control:RayeWindow}">
         <Setter Property="MinWidth" Value="300" />
         <Setter Property="shell:WindowChrome.WindowChrome">
@@ -52,24 +51,27 @@
                             </Grid.ColumnDefinitions>
                             <Grid Grid.Column="0">
                                 <Grid Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center">
-                                    <ContentPresenter Content="{Binding WindowIcon, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type control:RayeWindow}}}" />
+                                    <ContentPresenter x:Name="WindowIcon" Content="{Binding WindowIcon, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type control:RayeWindow}}}" shell:WindowChrome.IsHitTestVisibleInChrome="True" />
                                 </Grid>
                             </Grid>
                             <Grid Grid.Column="1">
                                 <Label Content="{TemplateBinding Title}" HorizontalAlignment="Left" VerticalAlignment="Center" />
                             </Grid>
+                            <Grid Grid.Column="2">
+                                <ContentPresenter x:Name="WindowContent" Content="{Binding WindowContent, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type control:RayeWindow}}}" shell:WindowChrome.IsHitTestVisibleInChrome="True" />
+                            </Grid>
                             <Grid Grid.Column="3">
                                 <StackPanel Orientation="Horizontal" shell:WindowChrome.IsHitTestVisibleInChrome="True">
-                                    <Button x:Name="MinimizeButton" Width="30" ToolTip="최소화" Background="White" Style="{StaticResource RayeButtonStyle}">
+                                    <Button x:Name="MinimizeButton" Width="30" ToolTip="최소화" Background="White" Style="{StaticResource WindowButtonStyle}">
                                         <Path Width="10" Height="2" Margin="0,6,0,0" Stretch="Fill" Fill="#FF000000" Data="F1 M 19,38L 57,38L 57,44L 19,44L 19,38 Z"/>
                                     </Button>
-                                    <Button x:Name="MaximizeButton"  Width="30" ToolTip="최대화" Background="White" Style="{StaticResource RayeButtonStyle}">
+                                    <Button x:Name="MaximizeButton"  Width="30" ToolTip="최대화" Background="White" Style="{StaticResource WindowButtonStyle}">
                                         <Grid>
                                             <Path x:Name="MaximizeIcon" Width="10" Height="10" Visibility="Visible" Stretch="Fill" Fill="#FF000000" Data="F1 M 43,48L 46,48L 46,57L 19,57L 19,34L 32,34L 32,40L 22,40L 22,54L 43,54L 43,48 Z M 21,19L 57,19L 57,50L 49,50L 49,46L 53,46L 53,27L 25,27L 25,32L 21,32L 21,19 Z M 37.75,30L 50,30L 50,42.25L 46,46.25L 46,37.25L 38,45.25L 34.75,42L 42.75,34L 33.75,34L 37.75,30 Z "/>
                                             <Path x:Name="RestoreIcon" Width="10" Height="10" Visibility="Hidden" Stretch="Fill" Fill="#FF000000" Data="F1 M 33,48L 33,54L 54,54L 54,40L 45,40L 45,34L 57,34L 57,57L 30,57L 30,48L 33,48 Z M 55,19L 55,31L 52,31L 52,27L 23,27L 23,46L 27,46L 27,49L 20,49L 20,19L 55,19 Z M 25.75,41L 34.75,41L 26.75,33L 30,29.75L 38,37.75L 38,28.75L 42,32.75L 42,45L 29.75,45L 25.75,41 Z "/>
                                         </Grid>
                                     </Button>
-                                    <Button x:Name="CloseButton" Width="30" ToolTip="닫기" Background="White" Style="{StaticResource RayeButtonStyle}">
+                                    <Button x:Name="CloseButton" Width="30" ToolTip="닫기" Background="White" Style="{StaticResource WindowButtonStyle}">
                                         <Path Width="10" Height="10" Stretch="Fill" Fill="#FF000000" Data="F1 M 26.9166,22.1667L 37.9999,33.25L 49.0832,22.1668L 53.8332,26.9168L 42.7499,38L 53.8332,49.0834L 49.0833,53.8334L 37.9999,42.75L 26.9166,53.8334L 22.1666,49.0833L 33.25,38L 22.1667,26.9167L 26.9166,22.1667 Z "/>
                                     </Button>
                                 </StackPanel>

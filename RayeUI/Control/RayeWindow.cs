@@ -24,6 +24,19 @@ namespace RayeUI.Control
             }
         }
 
+        public static readonly DependencyProperty WindowContentProperty = DependencyProperty.Register("WindowContent", typeof(object), typeof(RayeWindow));
+        public object WindowContent
+        {
+            get
+            {
+                return GetValue(WindowContentProperty);
+            }
+            set
+            {
+                SetValue(WindowContentProperty, value);
+            }
+        }
+
         public RayeWindow() : base()
         {
             base.Style = (Style)FindResource("RayeWindowStyle");
