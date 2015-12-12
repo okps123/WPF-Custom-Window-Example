@@ -1,11 +1,6 @@
-# RayeUI
+#RayeUI
+RayeUI는 WPF 컨트롤의 스타일을 제공하는 프레임워크입니다.
+여러 윈도우 스타일과 컨트롤 스타일등을 지원하고 손쉽게 사용할 수 있도록 제작되었습니다.
 
-RayeUI는 깔끔한 WPF UI Framework입니다.
-윈도우 스타일을 통해서 손쉽게 윈도우를 수정 할 수 있고 외에도 여러 컨트롤을 제공할 예정입니다.
-
-##윈도우
-###RayeWindow
+아래와 같은 여러 윈도우 스킨 등을 제공합니다.
 ![RayeWindow](http://i.imgur.com/9PntuNz.png)
-
-###BorderlessWindow
-![BorderlessWindow](http://i.imgur.com/OHVbSAA.png)
