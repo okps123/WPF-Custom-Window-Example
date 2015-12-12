@@ -1,7 +1,6 @@
 ﻿using RayeUI.Control.Window;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -9,10 +8,9 @@ using System.Windows.Controls;
 
 namespace RayeUI.Theme.Window
 {
-    public class RayeWindow : System.Windows.Window
+    public class OverlappedWindow : System.Windows.Window
     {
-        
-        public static readonly DependencyProperty WindowIconProperty = DependencyProperty.Register("WindowIcon", typeof(UIElement), typeof(RayeWindow));
+        public static readonly DependencyProperty WindowIconProperty = DependencyProperty.Register("WindowIcon", typeof(UIElement), typeof(OverlappedWindow));
         public UIElement WindowIcon
         {
             get
@@ -25,7 +23,7 @@ namespace RayeUI.Theme.Window
             }
         }
 
-        public static readonly DependencyProperty WindowContentProperty = DependencyProperty.Register("WindowContent", typeof(object), typeof(RayeWindow));
+        public static readonly DependencyProperty WindowContentProperty = DependencyProperty.Register("WindowContent", typeof(object), typeof(OverlappedWindow));
         public object WindowContent
         {
             get
@@ -38,7 +36,7 @@ namespace RayeUI.Theme.Window
             }
         }
 
-        public static readonly DependencyProperty IsWindowTitleVisibleProperty = DependencyProperty.Register("IsWindowTitleVisible", typeof(bool), typeof(RayeWindow), new PropertyMetadata(true));
+        public static readonly DependencyProperty IsWindowTitleVisibleProperty = DependencyProperty.Register("IsWindowTitleVisible", typeof(bool), typeof(OverlappedWindow), new PropertyMetadata(true));
         public bool IsWindowTitleVisible
         {
             get
@@ -51,9 +49,22 @@ namespace RayeUI.Theme.Window
             }
         }
 
-        public RayeWindow() : base()
+        public readonly static DependencyProperty ResizeBorderThicknessProperty = DependencyProperty.Register("ResizeBorderThickness", typeof(Thickness), typeof(OverlappedWindow), new PropertyMetadata(new Thickness(5)));
+        public Thickness ResizeBorderThickness
         {
-            base.Style = (Style)FindResource("RayeWindowStyle");
+            get
+            {
+                return (Thickness)GetValue(ResizeBorderThicknessProperty);
+            }
+            set
+            {
+                SetValue(ResizeBorderThicknessProperty, value);
+            }
+        }
+
+        public OverlappedWindow()
+        {
+            this.Style = (Style)FindResource("OverlappedWindowStyle");
         }
 
         public override void OnApplyTemplate()
@@ -62,6 +73,8 @@ namespace RayeUI.Theme.Window
             windowControlBox.OnMinimize = OnMinimize;
             windowControlBox.OnMaximize = OnMaximize;
             windowControlBox.OnClose = OnClose;
+
+            (GetTemplateChild("Header") as Grid).MouseMove += (sender, e) => { if (e.LeftButton == System.Windows.Input.MouseButtonState.Pressed) DragMove(); };
 
             base.OnApplyTemplate();
         }
