@@ -31,7 +31,7 @@
     <Style x:Key="OverlappedWindowStyle" TargetType="{x:Type window:OverlappedWindow}">
         <Setter Property="shell:WindowChrome.WindowChrome">
             <Setter.Value>
-                <shell:WindowChrome CaptionHeight="0"
+                <shell:WindowChrome CaptionHeight="{Binding WindowHeaderHeight, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type window:OverlappedWindow}}}"
                                     CornerRadius="0"
                                     GlassFrameThickness="1"
                                     ResizeBorderThickness="{Binding ResizeBorderThickness, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type window:OverlappedWindow}}}" />
@@ -44,7 +44,7 @@
                         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
                     </ControlTemplate.Resources>
                     <Grid x:Name="Grid" Margin="0" Background="White">
-                        <Grid x:Name="Header" VerticalAlignment="Top" Background="Transparent" Height="30" Panel.ZIndex="1">
+                        <Grid x:Name="Header" VerticalAlignment="Top" Background="{Binding WindowHeaderBackground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type window:OverlappedWindow}}}" Height="{Binding WindowHeaderHeight, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type window:OverlappedWindow}}}" Panel.ZIndex="1">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="44" />
                                 <ColumnDefinition Width="Auto" />
@@ -54,12 +54,12 @@
                             <Grid Grid.Column="0">
                                 <Grid Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center">
                                     <ContentPresenter x:Name="WindowIcon"
-                                                      Content="{Binding WindowIcon, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type window:OverlappedWindow}}}"/>
+                                                      Content="{Binding WindowHeaderIcon, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type window:OverlappedWindow}}}"/>
                                 </Grid>
                             </Grid>
                             <Grid Grid.Column="1">
                                 <Label Content="{TemplateBinding Title}" HorizontalAlignment="Left" VerticalAlignment="Center"
-                                       Visibility="{Binding IsWindowTitleVisible, Converter={StaticResource BooleanToVisibilityConverter}, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type window:OverlappedWindow}}}"/>
+                                       Visibility="{Binding IsWindowHeaderTitleVisible, Converter={StaticResource BooleanToVisibilityConverter}, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type window:OverlappedWindow}}}"/>
                             </Grid>
                             <Grid Grid.Column="2">
                                 <ContentPresenter x:Name="WindowContent" 
@@ -67,7 +67,7 @@
                                                   shell:WindowChrome.IsHitTestVisibleInChrome="True" />
                             </Grid>
                             <Grid Grid.Column="3">
-                                <control:WindowControlBox x:Name="WindowControlBox" Width="120" Fill="White"/>
+                                <control:WindowControlBox x:Name="WindowControlBox" Width="120" Fill="White" shell:WindowChrome.IsHitTestVisibleInChrome="True" />
                             </Grid>
                         </Grid>
                         <Grid>

@@ -5,13 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace RayeUI.Theme.Window
 {
     public class OverlappedWindow : System.Windows.Window
     {
-        public static readonly DependencyProperty WindowIconProperty = DependencyProperty.Register("WindowIcon", typeof(UIElement), typeof(OverlappedWindow));
-        public UIElement WindowIcon
+        public static readonly DependencyProperty WindowHeaderIconProperty = DependencyProperty.Register("WindowHeaderIcon", typeof(UIElement), typeof(OverlappedWindow));
+        public UIElement WindowHeaderIcon
         {
             get
             {
@@ -19,33 +20,59 @@ namespace RayeUI.Theme.Window
             }
             set
             {
-                SetValue(WindowIconProperty, value);
+                SetValue(WindowHeaderIconProperty, value);
             }
         }
 
-        public static readonly DependencyProperty WindowContentProperty = DependencyProperty.Register("WindowContent", typeof(object), typeof(OverlappedWindow));
-        public object WindowContent
+        public static readonly DependencyProperty WindowHeaderContentProperty = DependencyProperty.Register("WindowHeaderContent", typeof(object), typeof(OverlappedWindow));
+        public object WindowHeaderContent
         {
             get
             {
-                return GetValue(WindowContentProperty);
+                return GetValue(WindowHeaderContentProperty);
             }
             set
             {
-                SetValue(WindowContentProperty, value);
+                SetValue(WindowHeaderContentProperty, value);
             }
         }
 
-        public static readonly DependencyProperty IsWindowTitleVisibleProperty = DependencyProperty.Register("IsWindowTitleVisible", typeof(bool), typeof(OverlappedWindow), new PropertyMetadata(true));
-        public bool IsWindowTitleVisible
+        public static readonly DependencyProperty WindowHeaderHeightProperty = DependencyProperty.Register("WindowHeaderHeight", typeof(int), typeof(OverlappedWindow), new PropertyMetadata(30));
+        public int WindowHeaderHeight
         {
             get
             {
-                return (bool)GetValue(IsWindowTitleVisibleProperty);
+                return (int)GetValue(WindowHeaderHeightProperty);
             }
             set
             {
-                SetValue(IsWindowTitleVisibleProperty, value);
+                SetValue(WindowHeaderHeightProperty, value);
+            }
+        }
+
+        public static readonly DependencyProperty WindowHeaderBackgroundProperty = DependencyProperty.Register("WindowHeaderBackground", typeof(Brush), typeof(OverlappedWindow), new PropertyMetadata(Brushes.Transparent));
+        public Brush WindowHeaderBackground
+        {
+            get
+            {
+                return (Brush)GetValue(WindowHeaderBackgroundProperty);
+            }
+            set
+            {
+                SetValue(WindowHeaderBackgroundProperty, value);
+            }
+        }
+
+        public static readonly DependencyProperty IsWindowHeaderTitleVisibleProperty = DependencyProperty.Register("IsWindowHeaderTitleVisible", typeof(bool), typeof(OverlappedWindow), new PropertyMetadata(true));
+        public bool IsWindowHeaderTitleVisible
+        {
+            get
+            {
+                return (bool)GetValue(IsWindowHeaderTitleVisibleProperty);
+            }
+            set
+            {
+                SetValue(IsWindowHeaderTitleVisibleProperty, value);
             }
         }
 
