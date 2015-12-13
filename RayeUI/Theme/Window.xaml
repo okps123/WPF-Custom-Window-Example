@@ -54,7 +54,7 @@
                             <Grid Grid.Column="0">
                                 <Grid Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center">
                                     <ContentPresenter x:Name="WindowIcon"
-                                                      Content="{Binding WindowIcon, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type window:BorderlessWindow}}}"/>
+                                                      Content="{Binding WindowIcon, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type window:OverlappedWindow}}}"/>
                                 </Grid>
                             </Grid>
                             <Grid Grid.Column="1">
@@ -63,7 +63,7 @@
                             </Grid>
                             <Grid Grid.Column="2">
                                 <ContentPresenter x:Name="WindowContent" 
-                                                  Content="{Binding WindowContent, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type window:BorderlessWindow}}}" 
+                                                  Content="{Binding WindowContent, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type window:OverlappedWindow}}}" 
                                                   shell:WindowChrome.IsHitTestVisibleInChrome="True" />
                             </Grid>
                             <Grid Grid.Column="3">
@@ -126,7 +126,7 @@
                                                   shell:WindowChrome.IsHitTestVisibleInChrome="True" />
                             </Grid>
                             <Grid Grid.Column="3">
-                                <control:WindowControlBox x:Name="WindowControlBox" Width="120" Fill="Black"/>
+                                <control:WindowControlBox x:Name="WindowControlBox" Width="120" Fill="Black" shell:WindowChrome.IsHitTestVisibleInChrome="True"/>
                             </Grid>
                         </Grid>
                         <Grid Grid.Row="1">
