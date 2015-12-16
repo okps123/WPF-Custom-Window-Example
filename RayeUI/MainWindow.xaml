@@ -5,17 +5,17 @@
         xmlns:window="clr-namespace:RayeUI.Theme.Window"
         xmlns:Window="clr-namespace:RayeUI.Control.Window" x:Class="RayeUI.MainWindow"
         Title="RayeUI" Width="800" Height="500" WindowStartupLocation="CenterScreen"
-        IsWindowHeaderTitleVisible="False" ResizeBorderThickness="5" WindowHeaderBackground="#CC000000">
-    <window:OverlappedWindow.WindowHeaderIcon>
+        HeaderHeight="30" HeaderBackground="#3F000000">
+    <window:OverlappedWindow.HeaderIcon>
         <Path Width="20" Height="20" Stretch="Fill" Fill="White" Data="F1 M 27.9586,38.6386L 24,34.8214L 24,42.3333L 27.9586,38.6386 Z M 19,30L 25,28L 32.7021,34.2114L 49,19L 56,24L 56,53L 47,57L 32.5427,43.0591L 24,50L 19,47L 19,30 Z M 38.0872,38.5542L 47,45.742L 47,31.3125L 38.0872,38.5542 Z "/>
-    </window:OverlappedWindow.WindowHeaderIcon>
-    <window:OverlappedWindow.WindowHeaderContent>
+    </window:OverlappedWindow.HeaderIcon>
+    <window:OverlappedWindow.HeaderContent>
         <Grid HorizontalAlignment="Right">
             <Button Style="{StaticResource WindowButtonStyle}" Width="30" Background="Transparent" ToolTip="피드백">
                 <Path Width="10" Height="10" Stretch="Fill" Fill="White" Data="F1 M 33,51L 36.4167,61.75L 24,51L 19,51L 19,22L 57,22L 57,51L 33,51 Z "/>
             </Button>
         </Grid>
-    </window:OverlappedWindow.WindowHeaderContent>
+    </window:OverlappedWindow.HeaderContent>
     <Grid>
         <Grid VerticalAlignment="Top" Height="100">
             <Grid.Background>

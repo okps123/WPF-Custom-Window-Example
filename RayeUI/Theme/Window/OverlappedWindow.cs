@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -11,81 +12,55 @@ namespace RayeUI.Theme.Window
 {
     public class OverlappedWindow : System.Windows.Window
     {
-        public static readonly DependencyProperty WindowHeaderIconProperty = DependencyProperty.Register("WindowHeaderIcon", typeof(UIElement), typeof(OverlappedWindow));
-        public UIElement WindowHeaderIcon
+        public static readonly DependencyProperty HeaderIconProperty = DependencyProperty.Register("HeaderIcon", typeof(UIElement), typeof(OverlappedWindow));
+        public UIElement HeaderIcon
         {
             get
             {
-                return (UIElement)GetValue(IconProperty);
+                return (UIElement)GetValue(HeaderIconProperty);
             }
             set
             {
-                SetValue(WindowHeaderIconProperty, value);
+                SetValue(HeaderIconProperty, value);
             }
         }
 
-        public static readonly DependencyProperty WindowHeaderContentProperty = DependencyProperty.Register("WindowHeaderContent", typeof(object), typeof(OverlappedWindow));
-        public object WindowHeaderContent
+        public static readonly DependencyProperty HeaderContentProperty = DependencyProperty.Register("HeaderContent", typeof(object), typeof(OverlappedWindow));
+        public object HeaderContent
         {
             get
             {
-                return GetValue(WindowHeaderContentProperty);
+                return GetValue(HeaderContentProperty);
             }
             set
             {
-                SetValue(WindowHeaderContentProperty, value);
+                SetValue(HeaderContentProperty, value);
             }
         }
 
-        public static readonly DependencyProperty WindowHeaderHeightProperty = DependencyProperty.Register("WindowHeaderHeight", typeof(int), typeof(OverlappedWindow), new PropertyMetadata(30));
-        public int WindowHeaderHeight
+        public static readonly DependencyProperty HeaderHeightProperty = DependencyProperty.Register("HeaderHeight", typeof(int), typeof(OverlappedWindow), new PropertyMetadata(30));
+        public int HeaderHeight
         {
             get
             {
-                return (int)GetValue(WindowHeaderHeightProperty);
+                return (int)GetValue(HeaderHeightProperty);
             }
             set
             {
-                SetValue(WindowHeaderHeightProperty, value);
+                SetValue(HeaderHeightProperty, value);
             }
         }
 
-        public static readonly DependencyProperty WindowHeaderBackgroundProperty = DependencyProperty.Register("WindowHeaderBackground", typeof(Brush), typeof(OverlappedWindow), new PropertyMetadata(Brushes.Transparent));
-        public Brush WindowHeaderBackground
+        public static readonly DependencyProperty HeaderBackgroundProperty = DependencyProperty.Register("HeaderBackground", typeof(Brush), typeof(OverlappedWindow), new PropertyMetadata(Brushes.Transparent));
+        public Brush HeaderBackground
         {
             get
             {
-                return (Brush)GetValue(WindowHeaderBackgroundProperty);
+                return (Brush)GetValue(HeaderBackgroundProperty);
             }
             set
             {
-                SetValue(WindowHeaderBackgroundProperty, value);
-            }
-        }
-
-        public static readonly DependencyProperty IsWindowHeaderTitleVisibleProperty = DependencyProperty.Register("IsWindowHeaderTitleVisible", typeof(bool), typeof(OverlappedWindow), new PropertyMetadata(true));
-        public bool IsWindowHeaderTitleVisible
-        {
-            get
-            {
-                return (bool)GetValue(IsWindowHeaderTitleVisibleProperty);
-            }
-            set
-            {
-                SetValue(IsWindowHeaderTitleVisibleProperty, value);
-            }
-        }
-
-        public readonly static DependencyProperty ResizeBorderThicknessProperty = DependencyProperty.Register("ResizeBorderThickness", typeof(Thickness), typeof(OverlappedWindow), new PropertyMetadata(new Thickness(5)));
-        public Thickness ResizeBorderThickness
-        {
-            get
-            {
-                return (Thickness)GetValue(ResizeBorderThicknessProperty);
-            }
-            set
-            {
-                SetValue(ResizeBorderThicknessProperty, value);
+                SetValue(HeaderBackgroundProperty, value);
             }
         }
 
@@ -101,7 +76,15 @@ namespace RayeUI.Theme.Window
             windowControlBox.OnMaximize = OnMaximize;
             windowControlBox.OnClose = OnClose;
 
-            (GetTemplateChild("Header") as Grid).MouseMove += (sender, e) => { if (e.LeftButton == System.Windows.Input.MouseButtonState.Pressed) DragMove(); };
+            /*
+            var windowHeader = (UIElement)GetTemplateChild("Header");
+            windowHeader.MouseMove += 
+                (sender, e) => 
+                {
+                    if (e.LeftButton == System.Windows.Input.MouseButtonState.Pressed)
+                        DragMove();
+                };
+            */
 
             base.OnApplyTemplate();
         }
