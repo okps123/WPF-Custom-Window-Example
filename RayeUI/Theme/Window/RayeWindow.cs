@@ -12,42 +12,42 @@ namespace RayeUI.Theme.Window
     public class RayeWindow : System.Windows.Window
     {
         
-        public static readonly DependencyProperty WindowIconProperty = DependencyProperty.Register("WindowIcon", typeof(UIElement), typeof(RayeWindow));
-        public UIElement WindowIcon
+        public static readonly DependencyProperty HeaderIconProperty = DependencyProperty.Register("HeaderIcon", typeof(UIElement), typeof(RayeWindow));
+        public UIElement HeaderIcon
         {
             get
             {
-                return (UIElement)GetValue(IconProperty);
+                return (UIElement)GetValue(HeaderIconProperty);
             }
             set
             {
-                SetValue(WindowIconProperty, value);
+                SetValue(HeaderIconProperty, value);
             }
         }
 
-        public static readonly DependencyProperty WindowContentProperty = DependencyProperty.Register("WindowContent", typeof(object), typeof(RayeWindow));
-        public object WindowContent
+        public static readonly DependencyProperty HeaderContentProperty = DependencyProperty.Register("HeaderContent", typeof(object), typeof(RayeWindow));
+        public object HeaderContent
         {
             get
             {
-                return GetValue(WindowContentProperty);
+                return GetValue(HeaderContentProperty);
             }
             set
             {
-                SetValue(WindowContentProperty, value);
+                SetValue(HeaderContentProperty, value);
             }
         }
 
-        public static readonly DependencyProperty IsWindowTitleVisibleProperty = DependencyProperty.Register("IsWindowTitleVisible", typeof(bool), typeof(RayeWindow), new PropertyMetadata(true));
-        public bool IsWindowTitleVisible
+        public static readonly DependencyProperty IsHeaderTextVisibleProperty = DependencyProperty.Register("IsHeaderTextVisible", typeof(bool), typeof(RayeWindow), new PropertyMetadata(true));
+        public bool IsHeaderTextVisible
         {
             get
             {
-                return (bool)GetValue(IsWindowTitleVisibleProperty);
+                return (bool)GetValue(IsHeaderTextVisibleProperty);
             }
             set
             {
-                SetValue(IsWindowTitleVisibleProperty, value);
+                SetValue(IsHeaderTextVisibleProperty, value);
             }
         }
 

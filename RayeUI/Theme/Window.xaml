@@ -101,18 +101,17 @@
                             </Grid.ColumnDefinitions>
                             <Grid Grid.Column="0">
                                 <Grid Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center">
-                                    <ContentPresenter x:Name="WindowIcon"
-                                                      Content="{Binding WindowIcon, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type window:RayeWindow}}}"
+                                    <ContentPresenter x:Name="HeaderIcon"
+                                                      Content="{Binding HeaderIcon, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type window:RayeWindow}}}"
                                                       shell:WindowChrome.IsHitTestVisibleInChrome="True" />
                                 </Grid>
                             </Grid>
                             <Grid Grid.Column="1">
                                 <Label Content="{TemplateBinding Title}" HorizontalAlignment="Left" VerticalAlignment="Center"
-                                       Visibility="{Binding IsWindowTitleVisible, Converter={StaticResource BooleanToVisibilityConverter}, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type window:RayeWindow}}}"/>
+                                       Visibility="{Binding IsHeaderTextVisible, Converter={StaticResource BooleanToVisibilityConverter}, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type window:RayeWindow}}}"/>
                             </Grid>
                             <Grid Grid.Column="2">
-                                <ContentPresenter x:Name="WindowContent" 
-                                                  Content="{Binding WindowContent, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type window:RayeWindow}}}" 
+                                <ContentPresenter Content="{Binding HeaderContent, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type window:RayeWindow}}}" 
                                                   shell:WindowChrome.IsHitTestVisibleInChrome="True" />
                             </Grid>
                             <Grid Grid.Column="3">
