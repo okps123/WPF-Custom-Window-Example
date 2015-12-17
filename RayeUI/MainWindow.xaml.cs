@@ -1,4 +1,5 @@
-﻿using RayeUI.Theme.Window;
+﻿using RayeUI.Control.Window;
+using RayeUI.Theme.Window;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,13 @@ namespace RayeUI
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var dialog = new TextDialog("알림", "자살금지");
+            dialog.Owner = this;
+            dialog.ShowDialog();
         }
     }
 }

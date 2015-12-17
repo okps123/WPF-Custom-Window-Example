@@ -51,6 +51,20 @@ namespace RayeUI.Theme.Window
             }
         }
 
+        public static readonly DependencyProperty MinimizeBoxProperty = DependencyProperty.Register("MinimizeBox", typeof(bool), typeof(RayeWindow), new PropertyMetadata(true));
+        public bool MinimizeBox
+        {
+            get { return (bool)GetValue(MinimizeBoxProperty); }
+            set { SetValue(MinimizeBoxProperty, value); }
+        }
+
+        public static readonly DependencyProperty MaximizeBoxProperty = DependencyProperty.Register("MaximizeBox", typeof(bool), typeof(RayeWindow), new PropertyMetadata(true));
+        public bool MaximizeBox
+        {
+            get { return (bool)GetValue(MaximizeBoxProperty); }
+            set { SetValue(MaximizeBoxProperty, value); }
+        }
+
         public RayeWindow() : base()
         {
             base.Style = (Style)FindResource("RayeWindowStyle");

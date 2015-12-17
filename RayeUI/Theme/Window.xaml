@@ -115,7 +115,10 @@
                                                   shell:WindowChrome.IsHitTestVisibleInChrome="True" />
                             </Grid>
                             <Grid Grid.Column="3">
-                                <control:WindowControlBox x:Name="WindowControlBox" Width="120" Fill="Black" shell:WindowChrome.IsHitTestVisibleInChrome="True"/>
+                                <control:WindowControlBox x:Name="WindowControlBox" Width="120" Fill="Black"
+                                                          MinimizeBox="{Binding MinimizeBox, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type window:RayeWindow}}}"
+                                                          MaximizeBox="{Binding MaximizeBox, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type window:RayeWindow}}}"
+                                                          shell:WindowChrome.IsHitTestVisibleInChrome="True"/>
                             </Grid>
                         </Grid>
                         <Grid Grid.Row="1">

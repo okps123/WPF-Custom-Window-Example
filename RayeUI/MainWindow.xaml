@@ -1,20 +1,20 @@
-﻿<window:RayeWindow
+﻿<theme:RayeWindow
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:local="clr-namespace:RayeUI"
-        xmlns:window="clr-namespace:RayeUI.Theme.Window"
-        xmlns:Window="clr-namespace:RayeUI.Control.Window" x:Class="RayeUI.MainWindow"
+        xmlns:local="clr-namespace:RayeUI" 
+        xmlns:theme="clr-namespace:RayeUI.Theme.Window"
+        x:Class="RayeUI.MainWindow"
         Title="RayeUI" Width="800" Height="500" WindowStartupLocation="CenterScreen">
-    <window:RayeWindow.HeaderIcon>
+    <theme:RayeWindow.HeaderIcon>
         <Path Width="20" Height="20" Stretch="Fill" Fill="Black" Data="F1 M 27.9586,38.6386L 24,34.8214L 24,42.3333L 27.9586,38.6386 Z M 19,30L 25,28L 32.7021,34.2114L 49,19L 56,24L 56,53L 47,57L 32.5427,43.0591L 24,50L 19,47L 19,30 Z M 38.0872,38.5542L 47,45.742L 47,31.3125L 38.0872,38.5542 Z "/>
-    </window:RayeWindow.HeaderIcon>
-    <window:RayeWindow.HeaderContent>
+    </theme:RayeWindow.HeaderIcon>
+    <theme:RayeWindow.HeaderContent>
         <Grid HorizontalAlignment="Right">
             <Button Style="{StaticResource WindowButtonStyle}" Width="30" Background="Transparent" ToolTip="피드백">
                 <Path Width="10" Height="10" Stretch="Fill" Fill="Black" Data="F1 M 33,51L 36.4167,61.75L 24,51L 19,51L 19,22L 57,22L 57,51L 33,51 Z "/>
             </Button>
         </Grid>
-    </window:RayeWindow.HeaderContent>
+    </theme:RayeWindow.HeaderContent>
     <Grid>
         <Grid VerticalAlignment="Top" Height="100">
             <Grid.Background>
@@ -22,6 +22,6 @@
             </Grid.Background>
             <Label Content="RayeUI" FontFamily="나눔바른고딕" FontSize="32pt" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" />
         </Grid>
-        <Button Style="{StaticResource WindowButtonStyle}" Content="Hello, World!" FontSize="25pt" Width="500" Height="97" Background="White" FontFamily="나눔고딕" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button Content="?" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click" />
     </Grid>
-</window:RayeWindow>
+</theme:RayeWindow>
