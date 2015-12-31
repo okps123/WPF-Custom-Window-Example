@@ -22,8 +22,6 @@ namespace RayeUI.Control.Window
         public TextDialog(string head, string body)
         {
             InitializeComponent();
-            base.MinimizeBox = false;
-            base.MaximizeBox = false;
         }
     }
 }

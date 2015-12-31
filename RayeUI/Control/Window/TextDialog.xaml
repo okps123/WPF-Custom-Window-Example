@@ -7,7 +7,7 @@
         xmlns:theme="clr-namespace:RayeUI.Theme.Window"
         mc:Ignorable="d"
         Title="" Height="200" Width="470" WindowStartupLocation="CenterOwner" 
-        FontFamily="나눔바른고딕">
+        FontFamily="나눔바른고딕" MinimizeBox="False" MaximizeBox="False">
     <Grid Margin="10,0,10,0">
         <Grid.RowDefinitions>
             <RowDefinition Height="2*" />
@@ -15,8 +15,8 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <TextBlock Text="알림" FontSize="24px" FontWeight="Bold" HorizontalAlignment="Center" />
-                <TextBlock Text="아이디또는 비밀번호를 다시 확인해주세요." Foreground="#4c4b4b" FontSize="18px" HorizontalAlignment="Center" />
+                <TextBlock Text="{Binding Header}" FontSize="24px" FontWeight="Bold" HorizontalAlignment="Center" />
+                <TextBlock Text="{Binding Body}" Foreground="#4c4b4b" FontSize="18px" HorizontalAlignment="Center" />
             </StackPanel>
         </Grid>
     </Grid>

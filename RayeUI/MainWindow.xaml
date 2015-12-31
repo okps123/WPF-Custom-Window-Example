@@ -4,7 +4,7 @@
         xmlns:local="clr-namespace:RayeUI" 
         xmlns:theme="clr-namespace:RayeUI.Theme.Window"
         x:Class="RayeUI.MainWindow"
-        Title="RayeUI" Width="800" Height="500" WindowStartupLocation="CenterScreen">
+        Title="RayeUI" Width="800" Height="500" WindowStartupLocation="CenterScreen" IsHeaderTextVisible="False">
     <theme:RayeWindow.HeaderIcon>
         <Path Width="20" Height="20" Stretch="Fill" Fill="Black" Data="F1 M 27.9586,38.6386L 24,34.8214L 24,42.3333L 27.9586,38.6386 Z M 19,30L 25,28L 32.7021,34.2114L 49,19L 56,24L 56,53L 47,57L 32.5427,43.0591L 24,50L 19,47L 19,30 Z M 38.0872,38.5542L 47,45.742L 47,31.3125L 38.0872,38.5542 Z "/>
     </theme:RayeWindow.HeaderIcon>
@@ -18,7 +18,7 @@
     <Grid>
         <Grid VerticalAlignment="Top" Height="100">
             <Grid.Background>
-                <ImageBrush ImageSource="Resources\background.jpg" Stretch="UniformToFill" AlignmentY="Center" />
+                <ImageBrush ImageSource="Resources\background.png" Stretch="UniformToFill" AlignmentY="Center" />
             </Grid.Background>
             <Label Content="RayeUI" FontFamily="나눔바른고딕" FontSize="32pt" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" />
         </Grid>
