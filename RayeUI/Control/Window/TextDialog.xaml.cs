@@ -19,9 +19,15 @@ namespace RayeUI.Control.Window
     /// </summary>
     public partial class TextDialog : RayeWindow
     {
-        public TextDialog(string head, string body)
+        public string Header { get; set; }
+        public string Body { get; set; }
+
+        public TextDialog(string header, string body)
         {
             InitializeComponent();
+
+            this.Header = header;
+            this.Body = body;
         }
     }
 }

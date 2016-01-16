@@ -22,6 +22,6 @@
             </Grid.Background>
             <Label Content="RayeUI" FontFamily="나눔바른고딕" FontSize="32pt" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" />
         </Grid>
-        <Button Content="?" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click" />
+        <Button Content="?" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click" Height="132" Margin="255,202,246,135" Width="291" />
     </Grid>
 </theme:RayeWindow>

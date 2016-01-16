@@ -28,7 +28,7 @@ namespace RayeUI
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var dialog = new TextDialog("알림", "자살금지");
+            var dialog = new TextDialog("알림", "알림내용");
             dialog.Owner = this;
             dialog.ShowDialog();
         }

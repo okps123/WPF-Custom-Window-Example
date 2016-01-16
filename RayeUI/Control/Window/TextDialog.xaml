@@ -3,8 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:RayeUI.Control.Window"
         xmlns:theme="clr-namespace:RayeUI.Theme.Window"
+        xmlns:control="clr-namespace:RayeUI.Control.Window"
         mc:Ignorable="d"
         Title="" Height="200" Width="470" WindowStartupLocation="CenterOwner" 
         FontFamily="나눔바른고딕" MinimizeBox="False" MaximizeBox="False">
@@ -15,8 +15,8 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <TextBlock Text="{Binding Header}" FontSize="24px" FontWeight="Bold" HorizontalAlignment="Center" />
-                <TextBlock Text="{Binding Body}" Foreground="#4c4b4b" FontSize="18px" HorizontalAlignment="Center" />
+                <TextBlock Text="{Binding Header, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type control:TextDialog}}}" FontSize="24px" FontWeight="Bold" HorizontalAlignment="Center" />
+                <TextBlock Text="{Binding Body, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type control:TextDialog}}}" Foreground="#4c4b4b" FontSize="18px" HorizontalAlignment="Center" />
             </StackPanel>
         </Grid>
     </Grid>

@@ -76,16 +76,6 @@ namespace RayeUI.Theme.Window
             windowControlBox.OnMaximize = OnMaximize;
             windowControlBox.OnClose = OnClose;
 
-            /*
-            var windowHeader = (UIElement)GetTemplateChild("Header");
-            windowHeader.MouseMove += 
-                (sender, e) => 
-                {
-                    if (e.LeftButton == System.Windows.Input.MouseButtonState.Pressed)
-                        DragMove();
-                };
-            */
-
             base.OnApplyTemplate();
         }
 
